@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="建築師考試歷屆試題練習：建築結構與建築法規。" />
+  <title>建築師考試練習場</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">A</span><div><span class="eyebrow">ARCHITECT EXAM LAB</span><h1>建築師考試練習場</h1></div></div>
+      <div class="top-meta"><span class="live-dot"></span><span>離線題庫模式</span><button id="resetBtn" class="ghost-btn">重設本次作答</button></div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div><p class="kicker">BUILD YOUR REPETITION</p><h2>把歷屆題目，變成<br><em>可量化的訓練。</em></h2><p class="hero-copy">依年度與考科快速切換。選擇即時回饋，或用完整考試節奏一次作答，再檢查你的結果。</p></div>
+        <div class="hero-card"><div class="hero-card-label">題庫總覽</div><strong id="totalQuestions">360</strong><span>題可練習</span><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div><small>112 — 114 年 · 2 個考科</small></div>
+      </section>
+
+      <section class="workspace">
+        <aside class="library-panel">
+          <div class="panel-heading"><span>題庫選擇</span><span class="count-pill" id="subjectCount">6 組</span></div>
+          <div id="libraryList" class="library-list"></div>
+          <div class="source-note"><span class="source-icon">↗</span><div><strong>官方題庫來源</strong><p>考選部考畢試題查詢平臺<br>建築法規正式名稱：營建法規與實務</p></div></div>
+        </aside>
+
+        <section class="quiz-panel">
+          <div class="quiz-toolbar"><div><span class="section-label">CURRENT SET</span><h3 id="quizTitle">114 · 建築法規</h3><p id="quizSubtitle">營建法規與實務 · 共 80 題 · 120 分鐘</p></div><div class="mode-switch" role="tablist"><button class="mode-btn active" data-mode="instant">即時判題</button><button class="mode-btn" data-mode="timed">計時整卷</button></div></div>
+
+          <div class="status-row"><div class="progress-wrap"><div class="progress-label"><span>作答進度</span><strong id="progressText">0 / 80</strong></div><div class="progress-track"><div id="progressBar" class="progress-bar"></div></div></div><div class="timer-box"><span>剩餘時間</span><strong id="timer">02:00:00</strong></div></div>
+
+          <div class="question-card"><div class="question-top"><span class="question-no" id="questionNo">QUESTION 01</span><span class="instant-badge" id="instantBadge">即時回饋開啟</span></div><div class="question-text" id="questionText"></div><div id="options" class="options"></div><div id="feedback" class="feedback" aria-live="polite"></div><div class="question-actions"><button id="prevBtn" class="nav-btn secondary">← 上一題</button><div class="question-jump" id="questionJump"></div><button id="nextBtn" class="nav-btn primary">下一題 →</button></div></div>
+          <div class="exam-footer"><div><span class="tiny-label">TIP</span><span id="tipText">即時模式會在選擇後立即顯示正確答案。</span></div><button id="submitBtn" class="submit-btn hidden">交卷並檢查答案</button></div>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script src="data.js"></script><script src="app.js"></script>
+</body>
+</html>
